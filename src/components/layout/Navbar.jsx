@@ -34,13 +34,13 @@ export default function Navbar() {
             className={clsx(
                 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
                 scrolled
-                    ? 'bg-slate-50/90 backdrop-blur-md shadow-sm border-slate-200 py-3'
+                    ? 'bg-[var(--color-app-bg)]/90 backdrop-blur-md shadow-sm border-slate-200 py-3'
                     : 'bg-transparent border-transparent py-5'
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link to="/" className="flex items-center">
-                    <img src="/logo.png" alt="Al Zaitoon" className="h-12 w-auto object-contain" />
+                    <img src="/logo.png" alt="Al Zaitoon" className="h-16 md:h-20 w-auto object-contain" />
                 </Link>
 
                 {/* Desktop Nav */}
@@ -53,7 +53,7 @@ export default function Navbar() {
                                 'text-sm font-medium transition-colors hover:text-primary',
                                 location.pathname === link.path
                                     ? 'text-primary'
-                                    : 'text-slate-800'
+                                    : 'text-[var(--color-app-text)]'
                             )}
                         >
                             {link.name}
@@ -68,7 +68,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden text-slate-800"
+                    className="md:hidden text-[var(--color-app-text)]"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -78,7 +78,7 @@ export default function Navbar() {
             {/* Mobile Nav */}
             <div
                 className={clsx(
-                    'md:hidden fixed inset-0 bg-slate-50 z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out',
+                    'md:hidden fixed inset-0 bg-[var(--color-app-bg)] z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out',
                     isOpen ? 'translate-x-0' : 'translate-x-full'
                 )}
             >
@@ -86,7 +86,7 @@ export default function Navbar() {
                     <Link
                         key={link.path}
                         to={link.path}
-                        className="text-2xl font-display font-medium text-slate-800 hover:text-primary"
+                        className="text-2xl font-display font-medium text-[var(--color-app-text)] hover:text-primary"
                     >
                         {link.name}
                     </Link>

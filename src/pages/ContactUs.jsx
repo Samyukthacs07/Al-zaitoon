@@ -3,8 +3,8 @@ import { Button } from '../components/ui/Button';
 
 export default function Contact() {
     return (
-        <div className="pt-20 bg-slate-50 min-h-screen">
-            <section className="bg-secondary text-white py-20">
+        <div className="pt-20 bg-[var(--color-app-bg)] min-h-screen">
+            <section className="bg-secondary text-[var(--color-app-text)] py-20">
                 <div className="container mx-auto px-6 text-center">
                     <h1 className="text-5xl font-display font-bold mb-6">Get in Touch</h1>
                     <p className="text-slate-400 max-w-2xl mx-auto text-lg">
@@ -18,7 +18,7 @@ export default function Contact() {
                     {/* Contact Info */}
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-3xl font-display font-bold text-secondary mb-6">Contact Information</h2>
+                            <h2 className="text-3xl font-display font-bold text-[var(--color-app-text)] mb-6">Contact Information</h2>
                             <p className="text-slate-600 leading-relaxed mb-8">
                                 Whether you have a question about our products, implementation, or distribution, our team is ready to answer all your questions.
                             </p>
@@ -30,7 +30,7 @@ export default function Contact() {
                                     <MapPin size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-secondary text-lg">Visit Us</h3>
+                                    <h3 className="font-bold text-[var(--color-app-text)] text-lg">Visit Us</h3>
                                     <p className="text-slate-600">Al Zaitoon HQ, Business Bay<br />Dubai, United Arab Emirates</p>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@ export default function Contact() {
                                     <Mail size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-secondary text-lg">Email Us</h3>
+                                    <h3 className="font-bold text-[var(--color-app-text)] text-lg">Email Us</h3>
                                     <p className="text-slate-600">info@alzaitoon.ae<br />support@alzaitoon.ae</p>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@ export default function Contact() {
                                     <Phone size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-secondary text-lg">Call Us</h3>
+                                    <h3 className="font-bold text-[var(--color-app-text)] text-lg">Call Us</h3>
                                     <p className="text-slate-600">+971 4 123 4567<br />+971 50 987 6543</p>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@ export default function Contact() {
                                     <Clock size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-secondary text-lg">Working Hours</h3>
+                                    <h3 className="font-bold text-[var(--color-app-text)] text-lg">Working Hours</h3>
                                     <p className="text-slate-600">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 1:00 PM</p>
                                 </div>
                             </div>
@@ -69,32 +69,32 @@ export default function Contact() {
 
                     {/* Contact Form */}
                     <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-100">
-                        <h3 className="text-2xl font-bold font-display text-secondary mb-6">Send a Message</h3>
+                        <h3 className="text-2xl font-bold font-display text-[var(--color-app-text)] mb-6">Send a Message</h3>
                         <form className="space-y-5">
                             <div className="grid md:grid-cols-2 gap-5">
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-slate-700">First Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                    <input type="text" className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-slate-700">Last Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                    <input type="text" className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Email Address</label>
-                                <input type="email" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                <input type="email" className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Subject</label>
-                                <input type="text" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                <input type="text" className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Message</label>
-                                <textarea rows="5" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"></textarea>
+                                <textarea rows="5" className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"></textarea>
                             </div>
 
                             <Button size="lg" className="w-full">Send Message</Button>

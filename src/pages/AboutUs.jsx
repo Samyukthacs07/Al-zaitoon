@@ -3,33 +3,10 @@ import { Target, Eye, Award, Users, Globe, TrendingUp } from 'lucide-react';
 
 export default function About() {
     const stats = [
-        { label: "Years of Excellence", value: "15+", icon: <Award className="w-6 h-6" /> },
-        { label: "Global Brands", value: "50+", icon: <Globe className="w-6 h-6" /> },
-        { label: "Partner Network", value: "500+", icon: <Users className="w-6 h-6" /> },
-        { label: "Yearly Growth", value: "40%", icon: <TrendingUp className="w-6 h-6" /> }
-    ];
-
-    const timeline = [
-        {
-            year: "2010",
-            title: "The Beginning",
-            desc: "Al Zaitoon was established in the heart of Dubai, driven by a passion to bring world-class beauty products to the region."
-        },
-        {
-            year: "2015",
-            title: "Regional Expansion",
-            desc: "We expanded our operations to Saudi Arabia and Oman, securing exclusive distribution rights for key international brands."
-        },
-        {
-            year: "2018",
-            title: "Healthcare Division",
-            desc: "Launched a dedicated division to serve hospitals and pharmacies, bridging the gap between beauty and wellness."
-        },
-        {
-            year: "2023",
-            title: "Digital Evolution",
-            desc: "Modernized our supply chain with AI-driven logistics and launched a B2B digital ordering platform."
-        }
+        { label: "Years of Excellence", value: "2+", icon: <Award className="w-6 h-6" /> },
+        { label: "Global Brands", value: "5+", icon: <Globe className="w-6 h-6" /> },
+        { label: "Partner Network", value: "20+", icon: <Users className="w-6 h-6" /> },
+        { label: "Yearly Growth", value: "15%", icon: <TrendingUp className="w-6 h-6" /> }
     ];
 
     const fadeInUp = {
@@ -48,10 +25,10 @@ export default function About() {
     };
 
     return (
-        <div className="pt-20 bg-slate-50 min-h-screen font-sans selection:bg-primary/20">
+        <div className="pt-20 bg-[var(--color-app-bg)] min-h-screen font-sans selection:bg-primary/20">
 
             {/* Hero Section */}
-            <section className="relative bg-secondary text-white py-32 overflow-hidden">
+            <section className="relative bg-secondary text-[var(--color-app-text)] py-32 overflow-hidden">
                 {/* Abstract Background Elements */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
                     <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
@@ -92,7 +69,7 @@ export default function About() {
                                 <div className="flex justify-center mb-4 text-slate-400 group-hover:text-primary transition-colors duration-300">
                                     {stat.icon}
                                 </div>
-                                <div className="text-4xl lg:text-5xl font-display font-bold text-secondary mb-2">{stat.value}</div>
+                                <div className="text-4xl lg:text-5xl font-display font-bold text-[var(--color-app-text)] mb-2">{stat.value}</div>
                                 <div className="text-sm font-medium text-slate-500 uppercase tracking-widest">{stat.label}</div>
                             </div>
                         ))}
@@ -120,7 +97,7 @@ export default function About() {
                                     className="w-full h-full object-cover"
                                 />
                             </div>
-                            <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-slate-50 rounded-full flex items-center justify-center z-10 hidden lg:flex shadow-lg">
+                            <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[var(--color-app-bg)] rounded-full flex items-center justify-center z-10 hidden lg:flex shadow-lg">
                                 <div className="text-center">
                                     <span className="block text-4xl font-display font-bold text-primary">100%</span>
                                     <span className="text-xs uppercase tracking-wider text-slate-600">Commitment</span>
@@ -139,7 +116,7 @@ export default function About() {
                                 <div className="inline-flex items-center gap-2 text-primary font-bold tracking-widest uppercase text-sm mb-4">
                                     <Eye size={18} /> Our Vision
                                 </div>
-                                <h3 className="text-3xl font-display font-bold text-secondary mb-4">Redefining Beauty Standards</h3>
+                                <h3 className="text-3xl font-display font-bold text-[var(--color-app-text)] mb-4">Redefining Beauty Standards</h3>
                                 <p className="text-slate-600 text-lg leading-relaxed">
                                     To be the undisputed leader in beauty and wellness distribution across the MENA region, recognized not just for our portfolio, but for setting the benchmark in operational excellence and brand stewardship.
                                 </p>
@@ -156,7 +133,7 @@ export default function About() {
                                 <div className="inline-flex items-center gap-2 text-primary font-bold tracking-widest uppercase text-sm mb-4">
                                     <Target size={18} /> Our Mission
                                 </div>
-                                <h3 className="text-3xl font-display font-bold text-secondary mb-4">Empowering Growth</h3>
+                                <h3 className="text-3xl font-display font-bold text-[var(--color-app-text)] mb-4">Empowering Growth</h3>
                                 <p className="text-slate-600 text-lg leading-relaxed">
                                     We empower our partners—both brands and retailers—with exceptional products, seamless supply chain solutions, and market expertise, all while adhering to the highest standards of regulatory compliance and integrity.
                                 </p>
@@ -166,54 +143,8 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Timeline Section */}
-            <section className="py-24 bg-slate-50/50">
-                <div className="container mx-auto px-6 max-w-4xl">
-                    <div className="text-center mb-20">
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs">Our History</span>
-                        <h2 className="text-4xl md:text-5xl font-display font-bold text-secondary mt-3">The Journey So Far</h2>
-                    </div>
-
-                    <div className="relative">
-                        {/* Center Line */}
-                        <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-px bg-slate-300 ml-4 md:ml-0"></div>
-
-                        <div className="space-y-16">
-                            {timeline.map((item, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 40 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-100px" }}
-                                    transition={{ duration: 0.6 }}
-                                    className={`flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
-                                >
-                                    <div className="md:w-5/12 w-full pl-12 md:pl-0"></div>
-
-                                    {/* Bullet Point */}
-                                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-9 h-9 rounded-full bg-slate-50 border-4 border-primary shadow-lg flex items-center justify-center z-10 mt-1 md:mt-0">
-                                        <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                                    </div>
-
-                                    {/* Content Card */}
-                                    <div className={`md:w-5/12 w-full pl-12 md:pl-0 ${i % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                                        <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200/50 group">
-                                            <span className="text-5xl font-display font-bold text-slate-200 group-hover:text-primary/20 transition-colors block -mb-4 relative z-0">
-                                                {item.year}
-                                            </span>
-                                            <h4 className="text-xl font-bold text-secondary mb-3 relative z-10">{item.title}</h4>
-                                            <p className="text-slate-600 text-sm leading-relaxed relative z-10">{item.desc}</p>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* Portfolio Section (New) */}
-            <section className="py-24 bg-secondary text-white">
+            <section className="py-24 bg-secondary text-[var(--color-app-text)]">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <span className="text-primary font-bold tracking-widest uppercase text-xs">Our Portfolio</span>
@@ -270,7 +201,7 @@ export default function About() {
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <span className="text-primary font-bold tracking-widest uppercase text-xs">Why Choose Us</span>
-                        <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary mt-2">Competitive Advantages</h2>
+                        <h2 className="text-3xl md:text-4xl font-display font-bold text-[var(--color-app-text)] mt-2">Competitive Advantages</h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -286,9 +217,9 @@ export default function About() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300"
+                                className="p-8 bg-[var(--color-app-bg)] rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300"
                             >
-                                <h3 className="text-xl font-bold font-display text-secondary mb-3">{item.title}</h3>
+                                <h3 className="text-xl font-bold font-display text-[var(--color-app-text)] mb-3">{item.title}</h3>
                                 <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
                             </motion.div>
                         ))}
@@ -300,11 +231,11 @@ export default function About() {
             <section className="py-24 bg-secondary text-center relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                 <div className="container mx-auto px-6 relative z-10">
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">Ready to Partner With Us?</h2>
+                    <h2 className="text-4xl md:text-5xl font-display font-bold text-[var(--color-app-text)] mb-6">Ready to Partner With Us?</h2>
                     <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
                         Join the extensive network that is reshaping the beauty landscape of the Middle East.
                     </p>
-                    <a href="/contact" className="inline-block px-10 py-4 bg-primary text-white font-bold rounded-full hover:bg-white hover:text-secondary transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <a href="/contact" className="inline-block px-10 py-4 bg-primary text-white font-bold rounded-full hover:bg-white hover:text-[var(--color-app-text)] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         Connect With Us
                     </a>
                 </div>

@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-slate-50 overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center bg-[var(--color-app-bg)] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-50/90 to-transparent z-10" />
           <img
@@ -39,10 +39,10 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-2xl"
           >
-            <motion.span variants={fadeInUp} className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">
+            <motion.span variants={fadeInUp} className="text-[var(--color-app-text)] font-bold tracking-widest uppercase text-sm mb-4 block">
               Premium Beauty Distribution
             </motion.span>
-            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-display font-bold text-secondary mb-6 leading-tight">
+            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-display font-bold text-[var(--color-app-text)] mb-6 leading-tight">
               Elevating Beauty Standards in the <span className="text-primary italic">GCC</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-slate-700 mb-8 leading-relaxed max-w-lg">
@@ -69,7 +69,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center max-w-2xl mx-auto mb-16"
           >
-            <h2 className="text-4xl font-display font-bold text-secondary mb-4">Our Expertise</h2>
+            <h2 className="text-4xl font-display font-bold text-[var(--color-app-text)] mb-4">Our Expertise</h2>
             <p className="text-slate-600 text-lg">Comprehensive distribution solutions tailored for the beauty and wellness industry.</p>
           </motion.div>
 
@@ -97,12 +97,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+                className="p-8 rounded-2xl bg-[var(--color-app-bg)] border border-slate-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300"
               >
                 <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm mb-6 text-primary">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-secondary mb-3">{service.title}</h3>
+                <h3 className="text-xl font-bold text-[var(--color-app-text)] mb-3">{service.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
@@ -111,7 +111,7 @@ export default function Home() {
       </section>
 
       {/* Categories Parallax / Highlight */}
-      <section className="py-20 bg-secondary text-white">
+      <section className="py-20 bg-secondary text-[var(--color-app-text)]">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -120,7 +120,7 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-display font-bold mb-6">Curated Excellence</h2>
-              <p className="text-slate-200 mb-8 leading-relaxed">
+              <p className="text-[var(--color-app-text)] mb-8 leading-relaxed">
                 We adhere to the highest standards of quality, partnering only with brands that share our commitment to excellence, innovation, and ethical beauty.
               </p>
 
@@ -154,7 +154,7 @@ export default function Home() {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs text-secondary hidden md:block">
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs text-[var(--color-app-text)] hidden md:block">
                 <div className="flex gap-1 text-primary mb-2">
                   {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
@@ -168,7 +168,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-24 bg-accent/30">
         <div className="container mx-auto px-6 text-center max-w-3xl">
-          <h2 className="text-4xl font-display font-bold text-secondary mb-6">Ready to Expand Your Reach?</h2>
+          <h2 className="text-4xl font-display font-bold text-[var(--color-app-text)] mb-6">Ready to Expand Your Reach?</h2>
           <p className="text-slate-700 mb-10 text-lg">
             Join our network of successful partners. Whether you're a brand looking to enter the market or a pharmacy seeking premium products.
           </p>

@@ -10,7 +10,7 @@ export function Button({
 }) {
     const variants = {
         primary: 'bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg',
-        secondary: 'bg-secondary text-white hover:bg-secondary/90',
+        secondary: 'bg-secondary text-[var(--color-app-text)] hover:bg-slate-100',
         outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
         ghost: 'hover:bg-slate-100 text-slate-700',
     };

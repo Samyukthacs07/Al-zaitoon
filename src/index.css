@@ -1,12 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #009B8D;
-  /* Teal (Icon) */
-  --color-secondary: #0D3B4F;
-  /* Navy (Text) */
-  --color-accent: #E0F2F1;
-  /* Light Teal */
+  --color-primary: #4A5D23;
+  /* Deep Olive Gold */
+  --color-secondary: #E5D9C5;
+  /* Champagne */
+  --color-accent: #B5944E;
+  /* Soft Gold */
+
+  --color-app-bg: #FAF9F6;
+  /* Off-White */
+  --color-app-text: #4A5D23;
+  /* Deep Olive Gold (Main Text) */
 
   --font-display: "Playfair Display", serif;
   --font-body: "Inter", sans-serif;
@@ -39,7 +44,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-800 font-body antialiased;
+    @apply bg-[var(--color-app-bg)] text-[var(--color-app-text)] font-body antialiased;
   }
 
   h1,
@@ -48,6 +53,6 @@
   h4,
   h5,
   h6 {
-    @apply font-display text-slate-900;
+    @apply font-display text-[var(--color-app-text)];
   }
 }

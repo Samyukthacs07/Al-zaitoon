@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="font-body text-slate-800 bg-slate-50 min-h-screen flex flex-col">
+      <div className="font-body text-[var(--color-app-text)] bg-[var(--color-app-bg)] min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">
           <Routes>

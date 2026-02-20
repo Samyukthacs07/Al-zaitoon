@@ -30,9 +30,9 @@ export default function Services() {
     ];
 
     return (
-        <div className="pt-20 bg-slate-50 min-h-screen font-sans selection:bg-primary/20">
+        <div className="pt-20 bg-[var(--color-app-bg)] min-h-screen font-sans selection:bg-primary/20">
             {/* Hero Section */}
-            <section className="bg-secondary text-white py-24 relative overflow-hidden">
+            <section className="bg-secondary text-[var(--color-app-text)] py-24 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
                 <div className="container mx-auto px-6 text-center relative z-10">
                     <motion.h1
@@ -68,20 +68,20 @@ export default function Services() {
                             {/* Visual Side */}
                             <div className="w-full md:w-1/2">
                                 <div className="bg-white p-12 rounded-3xl shadow-xl border border-slate-100 relative group overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                                    <div className="relative z-10 mb-6 bg-slate-50 w-20 h-20 rounded-2xl flex items-center justify-center group-hover:bg-primary text-secondary transition-colors duration-300">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-app-bg)] rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
+                                    <div className="relative z-10 mb-6 bg-[var(--color-app-bg)] w-20 h-20 rounded-2xl flex items-center justify-center group-hover:bg-primary text-[var(--color-app-text)] transition-colors duration-300">
                                         <div className="group-hover:text-white transition-colors duration-300">
                                             {service.icon}
                                         </div>
                                     </div>
-                                    <h3 className="text-3xl font-display font-bold text-secondary mb-4">{service.title}</h3>
+                                    <h3 className="text-3xl font-display font-bold text-[var(--color-app-text)] mb-4">{service.title}</h3>
                                     <div className="h-1 w-20 bg-primary mb-6"></div>
                                 </div>
                             </div>
 
                             {/* Content Side */}
                             <div className="w-full md:w-1/2 space-y-6">
-                                <h3 className="text-3xl md:text-4xl font-display font-bold text-secondary block md:hidden">{service.title}</h3>
+                                <h3 className="text-3xl md:text-4xl font-display font-bold text-[var(--color-app-text)] block md:hidden">{service.title}</h3>
                                 <p className="text-slate-700 text-lg leading-relaxed">
                                     {service.description}
                                 </p>
