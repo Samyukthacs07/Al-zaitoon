@@ -45,7 +45,7 @@ export default function Navbar() {
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link to="/" className="flex flex-1 items-center justify-start pointer-events-auto shrink-0 transition-transform hover:scale-105 duration-300">
+                <Link href="/" className="flex flex-1 items-center justify-start pointer-events-auto shrink-0 transition-transform hover:scale-105 duration-300">
                     <div className={clsx(
                         "rounded-2xl flex items-center justify-center transition-all duration-300",
                         !isHeroTransparent ? "bg-white/80 backdrop-blur-xl shadow-lg border border-white/20 p-2 md:p-3" : "bg-transparent p-1 -ml-1"
@@ -142,6 +142,7 @@ export default function Navbar() {
                         </Button>
                     </Link>
                 </div>
+            </div>
         </nav>
     );
 }
