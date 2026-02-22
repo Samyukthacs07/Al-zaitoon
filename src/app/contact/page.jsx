@@ -1,5 +1,6 @@
+"use client";
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { Button } from '../components/ui/Button';
+import { Button } from '../../components/ui/Button';
 
 export default function Contact() {
     return (
@@ -7,7 +8,7 @@ export default function Contact() {
             <section className="bg-secondary text-[var(--color-app-text)] py-20">
                 <div className="container mx-auto px-6 text-center">
                     <h1 className="text-5xl font-display font-bold mb-6">Get in Touch</h1>
-                    <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+                    <p className="text-[var(--color-app-text)] opacity-70 max-w-2xl mx-auto text-lg">
                         We're here to help. Reach out to our team for any inquiries.
                     </p>
                 </div>
@@ -19,7 +20,7 @@ export default function Contact() {
                     <div className="space-y-8">
                         <div>
                             <h2 className="text-3xl font-display font-bold text-[var(--color-app-text)] mb-6">Contact Information</h2>
-                            <p className="text-slate-600 leading-relaxed mb-8">
+                            <p className="text-[var(--color-app-text)] opacity-70 leading-relaxed mb-8">
                                 Whether you have a question about our products, implementation, or distribution, our team is ready to answer all your questions.
                             </p>
                         </div>
@@ -31,7 +32,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-[var(--color-app-text)] text-lg">Visit Us</h3>
-                                    <p className="text-slate-600">Al Zaitoon HQ, Business Bay<br />Dubai, United Arab Emirates</p>
+                                    <p className="text-slate-600">Dubai, United Arab Emirates</p>
                                 </div>
                             </div>
 
@@ -51,7 +52,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-[var(--color-app-text)] text-lg">Call Us</h3>
-                                    <p className="text-slate-600">+971 4 123 4567<br />+971 50 987 6543</p>
+                                    <p className="text-slate-600">+971 4 000 0000</p>
                                 </div>
                             </div>
 
@@ -68,7 +69,7 @@ export default function Contact() {
                     </div>
 
                     {/* Contact Form */}
-                    <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-100">
+                    <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-[var(--color-primary-50)]">
                         <h3 className="text-2xl font-bold font-display text-[var(--color-app-text)] mb-6">Send a Message</h3>
                         <form className="space-y-5">
                             <div className="grid md:grid-cols-2 gap-5">
@@ -104,8 +105,8 @@ export default function Contact() {
             </section>
 
             {/* Map Placeholder */}
-            <section className="h-96 bg-slate-200 w-full relative">
-                <div className="absolute inset-0 flex items-center justify-center text-slate-500 font-medium">
+            <section className="h-96 bg-[var(--color-secondary)] w-full relative">
+                <div className="absolute inset-0 flex items-center justify-center text-[var(--color-app-text)] opacity-60 font-medium">
                     <div className="text-center">
                         <MapPin size={48} className="mx-auto mb-2 text-slate-400" />
                         <p>Google Maps Embed Area</p>

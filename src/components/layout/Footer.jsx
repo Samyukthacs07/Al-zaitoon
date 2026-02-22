@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Footer() {
@@ -7,11 +7,11 @@ export default function Footer() {
             <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
                 {/* Brand */}
                 <div className="space-y-4">
-                    <Link to="/" className="inline-block">
+                    <Link href="/" className="inline-block relative">
                         <img
                             src="/logo.png"
                             alt="Al Zaitoon"
-                            className="h-16 w-auto object-contain"
+                            className="h-28 md:h-36 w-auto object-contain scale-[1.3] origin-left"
                         />
                     </Link>
                     <h3 className="text-2xl font-display font-bold text-[var(--color-app-text)]">
@@ -27,11 +27,11 @@ export default function Footer() {
                 <div>
                     <h4 className="text-lg font-bold text-[var(--color-app-text)] mb-6">Quick Links</h4>
                     <ul className="space-y-3 text-sm">
-                        <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
-                        <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-                        <li><Link to="/services" className="hover:text-primary transition-colors">Services</Link></li>
-                        <li><Link to="/partners" className="hover:text-primary transition-colors">Brokers & Partners</Link></li>
-                        <li><Link to="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
+                        <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
+                        <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+                        <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
+                        <li><Link href="/partners" className="hover:text-primary transition-colors">Brokers & Partners</Link></li>
+                        <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
                     </ul>
                 </div>
 
@@ -45,7 +45,7 @@ export default function Footer() {
                         </li>
                         <li className="flex items-center gap-3">
                             <Phone className="w-5 h-5 text-primary shrink-0" />
-                            <span>+971 4 123 4567</span>
+                            <span>+971 4 000 0000</span>
                         </li>
                         <li className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-primary shrink-0" />
@@ -56,7 +56,7 @@ export default function Footer() {
             </div>
 
             <div className="container mx-auto px-6 mt-16 pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-                <p>&copy; {new Date().getFullYear()} Al Zaitoon Beauty Supplies. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Al Zaitoon Beauty Supplies Trading LLC. All rights reserved.</p>
                 <div className="flex gap-6">
                     <a href="#" className="hover:text-primary transition-colors"><Facebook size={20} /></a>
                     <a href="#" className="hover:text-primary transition-colors"><Instagram size={20} /></a>

@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'framer-motion'; // eslint-disable-line no-unused-vars
 import { Truck, ShieldCheck, BarChart3, Package } from 'lucide-react';
 
@@ -18,7 +19,7 @@ export default function Services() {
         {
             icon: <Package className="w-12 h-12 text-primary" />,
             title: "Logistics & Delivery",
-            description: "Fast, temperature-controlled delivery systems ensure product integrity from our warehouses to your shelf. We utilize AI-driven logistics to optimize routes and delivery times.",
+            description: "Fast, temperature-controlled delivery systems ensuring product integrity from our warehouses to your shelf across the UAE.",
             benefits: ["Cold chain logistics", "Real-time tracking", "Timely delivery"]
         },
         {
@@ -46,7 +47,7 @@ export default function Services() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-slate-300 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed"
+                        className="text-[var(--color-app-text)] opacity-80 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed"
                     >
                         Delivering excellence in every step of the beauty supply chain, from global sourcing to local shelf placement.
                     </motion.p>
@@ -67,9 +68,9 @@ export default function Services() {
                         >
                             {/* Visual Side */}
                             <div className="w-full md:w-1/2">
-                                <div className="bg-white p-12 rounded-3xl shadow-xl border border-slate-100 relative group overflow-hidden">
+                                <div className="bg-white p-12 rounded-3xl shadow-xl border border-[var(--color-primary-50)] relative group overflow-hidden">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-app-bg)] rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                                    <div className="relative z-10 mb-6 bg-[var(--color-app-bg)] w-20 h-20 rounded-2xl flex items-center justify-center group-hover:bg-primary text-[var(--color-app-text)] transition-colors duration-300">
+                                    <div className="relative z-10 mb-6 bg-[var(--color-app-bg)] w-20 h-20 rounded-2xl flex items-center justify-center group-hover:bg-[var(--color-primary-900)] text-primary transition-colors duration-300">
                                         <div className="group-hover:text-white transition-colors duration-300">
                                             {service.icon}
                                         </div>
@@ -82,12 +83,12 @@ export default function Services() {
                             {/* Content Side */}
                             <div className="w-full md:w-1/2 space-y-6">
                                 <h3 className="text-3xl md:text-4xl font-display font-bold text-[var(--color-app-text)] block md:hidden">{service.title}</h3>
-                                <p className="text-slate-700 text-lg leading-relaxed">
+                                <p className="text-[var(--color-app-text)] opacity-70 text-lg leading-relaxed">
                                     {service.description}
                                 </p>
                                 <ul className="space-y-3">
                                     {service.benefits.map((benefit, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
+                                        <li key={i} className="flex items-center gap-3 text-[var(--color-app-text)] opacity-80 font-medium">
                                             <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xs">
                                                 ✓
                                             </div>

@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  /* Semantic Color System: Warm Copper & Espresso */
+  --color-app-bg: #ebe5e0;
+  /* Light Taupe/Beige */
+  --color-app-text: #241916;
+  /* Deep Espresso */
+  --color-primary: #9c6e5a;
+  /* Warm Copper 500 */
+  --color-secondary: #dcc7b8;
+  /* Muted Beige */
+  --color-accent: #d5b09d;
+  /* Rose Copper */
+
+  /* Scale */
+  --color-primary-50: #f8f3f1;
+  --color-primary-100: #eeded8;
+  --color-primary-500: #9c6e5a;
+  --color-primary-900: #4a342c;
+  --color-primary-950: #261a15;
+
+  --font-display: "Tenor Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --animate-fade-in: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-up: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+
+  /* Safely scales everything down 20% on desktop to simulate an 80% zoom level. 
+     Mobile is preserved at 100% (16px base) to ensure readability and touch targets. */
+  html {
+    font-size: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 80%;
+      /* 16px * 0.8 = 12.8px base */
+    }
+  }
+
+  body {
+    @apply bg-[var(--color-app-bg)] text-[var(--color-app-text)] font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-[var(--color-app-text)];
+  }
+}
