@@ -38,10 +38,10 @@ export default function Navbar() {
     return (
         <nav
             className={clsx(
-                'fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b',
+                'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
                 scrolled
-                    ? 'bg-white/70 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] border-white/20 py-3'
-                    : 'bg-transparent border-transparent py-5'
+                    ? 'py-3'
+                    : 'bg-transparent py-5'
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
@@ -84,9 +84,9 @@ export default function Navbar() {
                                     )
                                     : clsx( // Neon white text for dark hero background
                                         'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]',
-                                        'hover:-translate-y-0.5 hover:scale-105 hover:text-[#dcc7b8] hover:drop-shadow-[0_0_12px_#dcc7b8]',
+                                        'hover:-translate-y-0.5 hover:scale-105 hover:text-[#DCC7B8] hover:drop-shadow-[0_0_12px_#DCC7B8]',
                                         pathname === link.path
-                                            ? 'font-medium text-[#dcc7b8] drop-shadow-[0_0_10px_#dcc7b8]'
+                                            ? 'font-medium text-[#DCC7B8] drop-shadow-[0_0_10px_#DCC7B8]'
                                             : 'font-normal opacity-90'
                                     )
                             )}
