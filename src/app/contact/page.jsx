@@ -1,8 +1,49 @@
 "use client";
+import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 
 export default function Contact() {
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        subject: '',
+        message: '',
+    });
+    const [status, setStatus] = useState({ type: '', message: '' });
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus({ type: '', message: '' });
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+            const data = await res.json();
+
+            if (res.ok) {
+                setStatus({ type: 'success', message: data.message || 'Message sent successfully!' });
+                setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
+            } else {
+                setStatus({ type: 'error', message: data.error || 'Something went wrong.' });
+            }
+        } catch {
+            setStatus({ type: 'error', message: 'Network error. Please try again.' });
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="pt-20 bg-[var(--color-app-bg)] min-h-screen">
             <section className="bg-secondary text-[var(--color-app-text)] py-20">
@@ -42,7 +83,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-[var(--color-app-text)] text-lg">Email Us</h3>
-                                    <p className="text-slate-600">info@alzaitoon.ae<br />support@alzaitoon.ae</p>
+                                    <p className="text-slate-600">info@alzaitoonbeauty.com</p>
                                 </div>
                             </div>
 
@@ -71,34 +112,46 @@ export default function Contact() {
                     {/* Contact Form */}
                     <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-[var(--color-primary-50)]">
                         <h3 className="text-2xl font-bold font-display text-[var(--color-app-text)] mb-6">Send a Message</h3>
-                        <form className="space-y-5">
+
+                        {status.message && (
+                            <div className={`mb-6 p-4 rounded-lg text-sm font-medium ${status.type === 'success'
+                                ? 'bg-green-50 text-green-700 border border-green-200'
+                                : 'bg-red-50 text-red-700 border border-red-200'
+                                }`}>
+                                {status.message}
+                            </div>
+                        )}
+
+                        <form className="space-y-5" onSubmit={handleSubmit}>
                             <div className="grid md:grid-cols-2 gap-5">
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-slate-700">First Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                    <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-slate-700">Last Name</label>
-                                    <input type="text" className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                    <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Email Address</label>
-                                <input type="email" className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Subject</label>
-                                <input type="text" className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                <input type="text" name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Message</label>
-                                <textarea rows="5" className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"></textarea>
+                                <textarea rows="5" name="message" value={formData.message} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"></textarea>
                             </div>
 
-                            <Button size="lg" className="w-full">Send Message</Button>
+                            <Button size="lg" className="w-full" disabled={loading}>
+                                {loading ? 'Sending...' : 'Send Message'}
+                            </Button>
                         </form>
                     </div>
                 </div>

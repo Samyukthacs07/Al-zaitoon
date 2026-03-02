@@ -5,9 +5,9 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react
 export default function Footer() {
     return (
         <footer className="bg-secondary text-[var(--color-app-text)] pt-20 pb-10">
-            <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
                 {/* Brand */}
-                <div className="space-y-4 md:col-span-4">
+                <div className="space-y-4 md:col-span-5">
                     <Link href="/" className="inline-block relative">
                         <img
                             src="/logo.png"
@@ -25,7 +25,7 @@ export default function Footer() {
                 </div>
 
                 {/* Quick Links */}
-                <div className="md:col-span-2">
+                <div className="md:col-span-3">
                     <h4 className="text-lg font-bold text-[var(--color-app-text)] mb-6">Quick Links</h4>
                     <ul className="space-y-3 text-sm">
                         <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
@@ -37,7 +37,7 @@ export default function Footer() {
                 </div>
 
                 {/* Contact */}
-                <div className="md:col-span-3">
+                <div className="md:col-span-4">
                     <h4 className="text-lg font-bold text-[var(--color-app-text)] mb-6">Contact Us</h4>
                     <ul className="space-y-4 text-sm">
                         <li className="flex items-start gap-3">
@@ -50,29 +50,9 @@ export default function Footer() {
                         </li>
                         <li className="flex items-center gap-3">
                             <Mail className="w-5 h-5 text-primary shrink-0" />
-                            <span>info@alzaitoon.ae</span>
+                            <span>info@alzaitoonbeauty.com</span>
                         </li>
                     </ul>
-                </div>
-
-                {/* Newsletter */}
-                <div className="md:col-span-3">
-                    <h4 className="text-lg font-bold text-[var(--color-app-text)] mb-6">Stay Beautiful</h4>
-                    <p className="text-sm mb-4">Subscribe to our newsletter for the latest beauty trends and product updates.</p>
-                    <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
-                        <input
-                            type="email"
-                            placeholder="Your email address"
-                            className="bg-white border border-slate-200 text-[var(--color-app-text)] text-sm rounded-full px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all font-body"
-                            required
-                        />
-                        <button
-                            type="submit"
-                            className="bg-primary text-white rounded-full px-4 py-3 text-sm font-medium hover:bg-primary/90 transition-all shadow-md active:scale-95"
-                        >
-                            Subscribe
-                        </button>
-                    </form>
                 </div>
             </div>
 
@@ -87,3 +67,4 @@ export default function Footer() {
         </footer>
     );
 }
+
