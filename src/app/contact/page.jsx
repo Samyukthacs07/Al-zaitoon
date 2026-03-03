@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 
 export default function Contact() {
@@ -83,7 +83,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-[var(--color-app-text)] text-lg">Email Us</h3>
-                                    <p className="text-slate-600">info@alzaitoonbeauty.com</p>
+                                    <a href="mailto:info@alzaitoonbeauty.com" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-primary hover:underline transition-colors block">info@alzaitoonbeauty.com</a>
                                 </div>
                             </div>
 
@@ -93,7 +93,17 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-[var(--color-app-text)] text-lg">Call Us</h3>
-                                    <p className="text-slate-600">+971 4 000 0000</p>
+                                    <a href="tel:+97140000000" className="text-slate-600 hover:text-primary transition-colors">+971 4 000 0000</a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-4">
+                                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
+                                    <MessageCircle size={24} />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-[var(--color-app-text)] text-lg">WhatsApp</h3>
+                                    <a href="https://wa.me/971528593945" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-primary transition-colors">+971 52 859 3945</a>
                                 </div>
                             </div>
 

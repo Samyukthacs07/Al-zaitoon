@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import LoadingScreen from '../components/ui/LoadingScreen';
+import WhatsAppButton from '../components/ui/WhatsAppButton';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
                     {children}
                 </main>
                 <Footer />
+                <WhatsAppButton />
             </body>
         </html>
     );
