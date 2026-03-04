@@ -24,18 +24,23 @@ export default function Contact() {
         setStatus({ type: '', message: '' });
 
         try {
-            const res = await fetch('/api/contact', {
+            const res = await fetch('/send-mail.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    name: `${formData.firstName} ${formData.lastName || ''}`.trim(),
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                }),
             });
             const data = await res.json();
 
-            if (res.ok) {
+            if (data.success) {
                 setStatus({ type: 'success', message: data.message || 'Message sent successfully!' });
                 setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
             } else {
-                setStatus({ type: 'error', message: data.error || 'Something went wrong.' });
+                setStatus({ type: 'error', message: data.message || 'Something went wrong.' });
             }
         } catch {
             setStatus({ type: 'error', message: 'Network error. Please try again.' });
@@ -83,7 +88,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-[var(--color-app-text)] text-lg">Email Us</h3>
-                                    <a href="mailto:info@alzaitoonbeauty.com" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-primary hover:underline transition-colors block">info@alzaitoonbeauty.com</a>
+                                    <a href="https://mail.google.com/mail/?view=cm&to=info@alzaitoonbeauty.com" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-primary hover:underline transition-colors block">info@alzaitoonbeauty.com</a>
                                 </div>
                             </div>
 
