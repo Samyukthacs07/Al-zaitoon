@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 
 export default function Contact() {
@@ -97,15 +97,6 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0">
-                                    <Clock size={24} />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-[var(--color-app-text)] text-lg">Working Hours</h3>
-                                    <p className="text-slate-600">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 9:00 AM - 1:00 PM</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
