@@ -1,6 +1,7 @@
 "use client";
 import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion'; // eslint-disable-line no-unused-vars
 import { Target, Eye, Award, Users, Globe, TrendingUp } from 'lucide-react';
+import Link from 'next/link';
 import { useRef, useEffect } from 'react';
 
 function AnimatedCounter({ value, suffix }) {
@@ -61,7 +62,7 @@ export default function About() {
                         <motion.span variants={fadeInUp} className="inline-block py-1 px-3 rounded-full bg-[var(--color-primary-900)] text-primary text-xs font-bold tracking-widest uppercase mb-6">
                             About Us
                         </motion.span>
-                        <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
+                        <motion.h1 variants={fadeInUp} className="text-3xl md:text-5xl lg:text-7xl font-display font-bold mb-4 md:mb-6 leading-tight">
                             Crafting Beauty <br /> <span className="text-primary italic">Distribution</span>
                         </motion.h1>
                         <motion.p variants={fadeInUp} className="text-slate-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
@@ -78,15 +79,15 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-10"
+                    className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-6 md:p-10"
                 >
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-slate-200/50">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 divide-x divide-slate-200/50">
                         {stats.map((stat, i) => (
                             <div key={i} className="text-center px-4 group">
                                 <div className="flex justify-center mb-4 text-slate-400 group-hover:text-primary transition-colors duration-300">
                                     {stat.icon}
                                 </div>
-                                <div className="text-4xl lg:text-5xl font-display font-bold text-[var(--color-app-text)] mb-2">
+                                <div className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[var(--color-app-text)] mb-2">
                                     <AnimatedCounter value={stat.num} suffix={stat.suffix} />
                                 </div>
                                 <div className="text-sm font-medium text-slate-500 uppercase tracking-widest">{stat.label}</div>
@@ -280,9 +281,9 @@ export default function About() {
                     <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
                         Join the extensive network that is reshaping the beauty landscape of the Middle East.
                     </p>
-                    <a href="/contact" className="inline-block px-10 py-4 bg-primary text-white font-bold rounded-full hover:bg-white hover:text-[var(--color-app-text)] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <Link href="/contact" className="inline-block px-10 py-4 bg-primary text-white font-bold rounded-full hover:bg-white hover:text-[var(--color-app-text)] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         Connect With Us
-                    </a>
+                    </Link>
                 </div>
             </section>
         </div>

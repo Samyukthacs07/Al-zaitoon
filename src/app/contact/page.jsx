@@ -12,48 +12,33 @@ export default function Contact() {
         message: '',
     });
     const [status, setStatus] = useState({ type: '', message: '' });
-    const [loading, setLoading] = useState(false);
+
 
     const handleChange = (e) => {
         setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setLoading(true);
-        setStatus({ type: '', message: '' });
 
-        try {
-            const res = await fetch('/send-mail.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: `${formData.firstName} ${formData.lastName || ''}`.trim(),
-                    email: formData.email,
-                    subject: formData.subject,
-                    message: formData.message,
-                }),
-            });
-            const data = await res.json();
+        const fullName = `${formData.firstName} ${formData.lastName || ''}`.trim();
+        const subject = encodeURIComponent(formData.subject || 'Contact Form Inquiry');
+        const body = encodeURIComponent(
+            `Name: ${fullName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        );
 
-            if (data.success) {
-                setStatus({ type: 'success', message: data.message || 'Message sent successfully!' });
-                setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
-            } else {
-                setStatus({ type: 'error', message: data.message || 'Something went wrong.' });
-            }
-        } catch {
-            setStatus({ type: 'error', message: 'Network error. Please try again.' });
-        } finally {
-            setLoading(false);
-        }
+        const mailtoLink = `mailto:info@alzaitoonbeauty.com?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+
+        setStatus({ type: 'success', message: 'Your email client has been opened. Please send the email to complete your message.' });
+        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
     };
 
     return (
         <div className="pt-20 bg-[var(--color-app-bg)] min-h-screen">
             <section className="bg-secondary text-[var(--color-app-text)] py-20">
                 <div className="container mx-auto px-6 text-center">
-                    <h1 className="text-5xl font-display font-bold mb-6">Get in Touch</h1>
+                    <h1 className="text-3xl md:text-5xl font-display font-bold mb-4 md:mb-6">Get in Touch</h1>
                     <p className="text-[var(--color-app-text)] opacity-70 max-w-2xl mx-auto text-lg">
                         We're here to help. Reach out to our team for any inquiries.
                     </p>
@@ -65,7 +50,7 @@ export default function Contact() {
                     {/* Contact Info */}
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-3xl font-display font-bold text-[var(--color-app-text)] mb-6">Contact Information</h2>
+                            <h2 className="text-2xl md:text-3xl font-display font-bold text-[var(--color-app-text)] mb-4 md:mb-6">Contact Information</h2>
                             <p className="text-[var(--color-app-text)] opacity-70 leading-relaxed mb-8">
                                 Whether you have a question about our products, implementation, or distribution, our team is ready to answer all your questions.
                             </p>
@@ -164,23 +149,15 @@ export default function Contact() {
                                 <textarea rows="5" name="message" value={formData.message} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg bg-[var(--color-app-bg)] border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"></textarea>
                             </div>
 
-                            <Button size="lg" className="w-full" disabled={loading}>
-                                {loading ? 'Sending...' : 'Send Message'}
+                            <Button size="lg" className="w-full">
+                                Send Message
                             </Button>
                         </form>
                     </div>
                 </div>
             </section>
 
-            {/* Map Placeholder */}
-            <section className="h-96 bg-[var(--color-secondary)] w-full relative">
-                <div className="absolute inset-0 flex items-center justify-center text-[var(--color-app-text)] opacity-60 font-medium">
-                    <div className="text-center">
-                        <MapPin size={48} className="mx-auto mb-2 text-slate-400" />
-                        <p>Google Maps Embed Area</p>
-                    </div>
-                </div>
-            </section>
+
         </div>
     );
 }

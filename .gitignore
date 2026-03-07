@@ -39,6 +39,8 @@ lerna-debug.log*
 # OS files
 .DS_Store
 Thumbs.db
+  
+.docs/
 
 # Agent skills & tooling
 .agents

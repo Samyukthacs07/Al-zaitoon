@@ -48,7 +48,7 @@ export default function Navbar() {
                 <Link href="/" className="flex flex-1 items-center justify-start pointer-events-auto shrink-0 transition-transform hover:scale-105 duration-300">
                     <div className={clsx(
                         "rounded-2xl flex items-center justify-center transition-all duration-300",
-                        !isHeroTransparent ? "bg-white/80 backdrop-blur-xl shadow-lg border border-white/20 p-2 md:p-3" : "bg-transparent p-1 -ml-1"
+                        !isHeroTransparent ? "bg-white/80 backdrop-blur-xl shadow-lg border border-white/20 p-1.5 md:p-3" : "bg-transparent p-1 -ml-1"
                     )}>
                         <img
                             src="/logo.png"
@@ -56,8 +56,8 @@ export default function Navbar() {
                             className={clsx(
                                 "w-auto object-contain transition-all duration-500",
                                 !isHeroTransparent
-                                    ? "h-16 md:h-20 drop-shadow-sm"
-                                    : "h-24 md:h-28 brightness-0 invert drop-shadow-md"
+                                    ? "h-10 md:h-20 drop-shadow-sm"
+                                    : "h-16 md:h-28 brightness-0 invert drop-shadow-md"
                             )}
                         />
                     </div>

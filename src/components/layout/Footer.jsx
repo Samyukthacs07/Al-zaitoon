@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link';
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 
 export default function Footer() {
     return (
@@ -12,7 +12,7 @@ export default function Footer() {
                         <img
                             src="/logo.png"
                             alt="Al Zaitoon"
-                            className="h-28 md:h-36 w-auto object-contain scale-[1.3] origin-left"
+                            className="h-20 md:h-36 w-auto object-contain scale-[1.3] origin-left"
                         />
                     </Link>
                     <h3 className="text-2xl font-display font-bold text-[var(--color-app-text)]">
@@ -52,17 +52,16 @@ export default function Footer() {
                             <Mail className="w-5 h-5 text-primary shrink-0" />
                             <span>info@alzaitoonbeauty.com</span>
                         </li>
+                        <li className="flex items-center gap-3">
+                            <MessageCircle className="w-5 h-5 text-primary shrink-0" />
+                            <a href="https://wa.me/971528593945" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">+971 52 859 3945</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-            <div className="container mx-auto px-6 mt-16 pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+            <div className="container mx-auto px-6 mt-16 pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-center items-center gap-4 text-xs text-slate-400">
                 <p>&copy; {new Date().getFullYear()} Al Zaitoon Beauty Supplies Trading LLC. All rights reserved.</p>
-                <div className="flex gap-6">
-                    <a href="#" className="hover:text-primary transition-colors"><Facebook size={20} /></a>
-                    <a href="#" className="hover:text-primary transition-colors"><Instagram size={20} /></a>
-                    <a href="#" className="hover:text-primary transition-colors"><Linkedin size={20} /></a>
-                </div>
             </div>
         </footer>
     );
